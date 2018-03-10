@@ -20,6 +20,7 @@ import 'jwplayer'
 import '../../fonts/roboto-light.styl'
 import '../../styles/common.styl'
 import '../../styles/nk-player'
+import './css'
 
 (function ($, win) {
     /**
@@ -50,31 +51,11 @@ import '../../styles/nk-player'
         postZan()
     })
 
-    // init zan number
-    function postZan(){
-        $.post('https://op.cgtn.com/api/ga/ofo', {
-            page: 'page1'
-        }, (d)=>{
-            switch (d.stat) {
-                case 200:
-                    zan_num.text(d.zan)
-                    break;
-            
-                default:
-                    console.error(d.msg)
-                    break;
-            }
-        })
-    }
-    postZan();
-
     // Video
-    jwplayer.key = 'IaFpnm2qy71qN1ip6dC+1PkqT2JClZfpdNl7lYjX15g=';
-
     try {
         jwplayer('jw_video').setup({
-            file: 'https://video.cgtn.com/news/3267544e77677a6333566d54/video/625d29fd-2f73-4821-9300-115bd2f5dff7/625d29fd-2f73-4821-9300-115bd2f5dff7.m3u8',
-            image: 'https://video.cgtn.com/news/3267544e77677a6333566d54/video/625d29fd-2f73-4821-9300-115bd2f5dff7/625d29fd-2f73-4821-9300-115bd2f5dff7.jpg',
+            file: '',
+            image: '',
             skin: {
                 name: 'nk-player'
             },
@@ -95,13 +76,4 @@ import '../../styles/nk-player'
     } catch(error){
         console.error('JWplayer: ' + error)
     }
-
-    // if(window.OFO_ENV.isLikelyInApp){
-    //     let title = config.page1.title,
-    //         description = config.page1.desc,
-    //         imgUrl = config.page1.thumb,
-    //         shareUrl = config.page1.url
-
-    //     window.ofoResponseProxy('shareConfig', [title, description, imgUrl, shareUrl])
-    // }
 }(jQuery, window))

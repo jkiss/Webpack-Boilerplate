@@ -48,44 +48,14 @@ module.exports = {
             filename: 'new-era-for-china.html',
             template: path.resolve(__dirname, '../src/html/page1.ejs'),
             _entry: 'page1.index',  // 用于多页判断
-            title: config.page1.title,
-            desc: config.page1.desc,
-            image: config.page1.image,
-            url: config.page1.url,
-            thumb: config.page1.thumb
+            page: config.page1
         })
         ,new htmlWebpackPlugin({
             inject: false,
             filename: 'moments-on-world-stage.html',
             template: path.resolve(__dirname, '../src/html/page2.ejs'),
             _entry: 'page2.index',  // 用于多页判断
-            title: config.page2.title,
-            desc: config.page2.desc,
-            image: config.page2.image,
-            url: config.page2.url,
-            thumb: config.page2.thumb
-        })
-        ,new htmlWebpackPlugin({
-            inject: false,
-            filename: 'tackled-curruption.html',
-            template: path.resolve(__dirname, '../src/html/page3.ejs'),
-            _entry: 'page3.index',  // 用于多页判断
-            title: config.page3.title,
-            desc: config.page3.desc,
-            image: config.page3.image,
-            url: config.page3.url,
-            thumb: config.page3.thumb
-        })
-        ,new htmlWebpackPlugin({
-            inject: false,
-            filename: 'cutting-red-tape.html',
-            template: path.resolve(__dirname, '../src/html/page4.ejs'),
-            _entry: 'page4.index',  // 用于多页判断
-            title: config.page4.title,
-            desc: config.page4.desc,
-            image: config.page4.image,
-            url: config.page4.url,
-            thumb: config.page4.thumb
+            page: config.page2
         })
 
         // Automatically loaded modules when identifier is used as free variable in a module

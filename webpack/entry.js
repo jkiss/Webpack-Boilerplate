@@ -13,10 +13,6 @@ const PAGE_PATH = [
 
     ,'page2/index'
 
-    ,'page3/index'
-
-    ,'page4/index'
-
 ], ENTRY = {};
 
 PAGE_PATH.forEach((page) => {

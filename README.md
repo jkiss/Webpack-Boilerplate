@@ -1,21 +1,7 @@
-# 2018 ofo 品牌推广项目
+# Webpack 打包模版
 
 > 非React框架，沿用Webpack打包，用于制作简单的页面
-
-### 页面点赞统计页面映射：
-
-```javascript
-{
-    'page1' -> 你我新时代,
-    'page2' -> 亲民外交,
-    'page3' -> 宁德治吏,
-    'page4' -> 马上就办
-}
-```
-
-### 遇到的一些技术问题总结：
-
-> 组件文件夹结构采用DDD思想
+> 组件文件夹结构采用DDD方式
 
 1. src/ 业务文件夹目录结构：
 ```javascript
@@ -26,7 +12,7 @@
 │   ├── page2.ejs
 │   └── partials
 ├── images
-│   ├── circle.png  // 外层图片由组件应用，hash命名
+│   ├── circle.png  // 外层图片由组件import使用
 │   ├── copy        // copy文件夹下面的图片会直接复制到 build/images 下面
 │
 ├── modules         // 通用组件
@@ -34,10 +20,10 @@
 │   └── utils
 ├── pages              // 业务组件
 │   ├── about          // page 1
-│   │   ├── about.styl
+│   │   ├── css.styl
 │   │   └── index.js
 │   └── home           // page 2
-│       ├── home.styl
+│       ├── css.styl
 │       └── index.js
 ├── styles             // 通用样式模块
 │   ├── nk-player.styl
@@ -60,21 +46,21 @@
 // webpack发布路径，以及其他一些分享信息，统一配置
 {
     // Deploy
-    public_path: '/event/2018/article'
+    public_path: 'webpack发布路径'
 
     // multi-pages
-    ,page1:{ // 你我新时代
-        title: '你我的新时代：全面小康一个都不能少'
-        ,desc: 'China\'s new era in which \'no one must be left behind\''
-        ,image: ''
-        ,url: 'https://news.cgtn.com/event/2018/index.html'
-        ,thumb: ''
+    ,page1:{   // 你我新时代
+        title: '标题'
+        ,desc: '描述'
+        ,image: '预览图'
+        ,url: 'html页面完整url'
+        ,thumb: '微信分享方图'
     }
     ,page2:{
-        title: 'Ten most used words in Premier Li Keqiang\'s government work report in recent years'
-        ,desc: 'Terms such as &quot;development&quot;, &quot;economy&quot;, &quot;new&quot; and &quot;rural&quot; have become the most frequently mentioned words in the work reports during Two Sessions since 2013.'
+        title: ''
+        ,desc: ''
         ,image: ''
-        ,url: 'https://news.cgtn.com/event/TwoSessions2018/index.html'
+        ,url: ''
         ,thumb: ''
     }
 }
