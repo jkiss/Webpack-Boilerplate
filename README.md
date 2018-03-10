@@ -1,7 +1,7 @@
 # Webpack 打包模版
 
 > 非React框架，沿用Webpack打包，用于制作简单的页面
-> 组件文件夹结构采用DDD方式
+> 组件文件夹结构采用DDD(Domain Drive Design)方式
 
 1. src/ 业务文件夹目录结构：
 ```javascript
