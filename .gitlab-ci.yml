@@ -1,0 +1,17 @@
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://gitlab.com/pages/plain-html
+before_script:
+  - npm install --prefer-offline
+  - npm run build
+
+cache:
+  untracked: true
+  paths:
+  - node_modules/
+
+deploy-test-s3:
+  stage: deploy
+  script:
+  - npm run deploy-test
+  only:
+  - test-s3

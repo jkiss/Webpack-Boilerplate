@@ -6,46 +6,37 @@
  */
 'use strict';
 
-function successShare(_type){
-	//分享成功 _type: timeline / message
-	if(shareData.backFun !== ''){
-		setTimeout(shareData.backFun,1);
-	}
-	console.log("Share success!");
-}
-function cancelShare(_type){
-	//取消分享 _type: timeline / message
-	if(shareData.cancelFun !== ''){
-		setTimeout(shareData.cancelFun,1);
-	}
-	console.log("Share cancel...");
-}
-function setShareData(){
+/**
+ * data obj contain info to share
+ * 
+ * @param {Object} data 
+ */
+function setShareData(data){
 	//朋友圈
 	wx.onMenuShareTimeline({
-		title: shareData.title,
-		link: shareData.site_link,
-		imgUrl: shareData.img_url,
+		title: data.title,
+		link: data.site_link,
+		imgUrl: data.img_url,
 		success: function (){ 
-		 	successShare("timeline");
+		 	console.log('Timeline share success!');
 		},
 		cancel: function (){
-			cancelShare("timeline");
+			console.log('Timeline share fail!');
 		}
 	});
 	//好友
 	wx.onMenuShareAppMessage({
-		title: shareData.title,
-		desc: shareData.desc,
-		link: shareData.site_link, 
-		imgUrl: shareData.img_url,
+		title: data.title,
+		desc: data.desc,
+		link: data.site_link, 
+		imgUrl: data.img_url,
 		type: '', // 分享类型,music、video或link，不填默认为link
 		dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
 		success: function (){ 
-		 	successShare("message");
+			console.log('Message share success!');
 		},
 		cancel: function (){
-			cancelShare("message");
+			console.log('Message share fail!');
 		}
 	});
 }
@@ -59,13 +50,13 @@ function setWxShare(shareData){
 	// request signature
 	$.ajax({
 		type: 'GET',
-		url: 'https://wechat.cgtn.com/socialweb/social/weixin/getKeys.do?url=' + encodeURIComponent(location.href.split('#')[0]),
+		url: 'https://url/to/api?url=' + encodeURIComponent(location.href.split('#')[0]),
 		contentType: 'application/json',
 		dataType: 'json',
 		success: function(data){
 			wx.config({
 				debug: false,
-				appId: 'wxd61ff47456d31b8e', // 必填，公众号的唯一标识
+				appId: '', // 必填，公众号的唯一标识
 				timestamp: data.data.timestamp, // 必填，生成签名的时间戳
 				nonceStr: data.data.nonceStr, // 必填，生成签名的随机串
 				signature: data.data.signature,// 必填，签名，见附录1

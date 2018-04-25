@@ -8,6 +8,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+<!-- Icon -->
+<link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>/images/favicon.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="<%= webpackConfig.output.publicPath %>/images/favicon.png">
+
 <!-- CSS -->
 <% for (var css in htmlWebpackPlugin.files.css) { %>
     <% if(htmlWebpackPlugin.files.css[css].indexOf(htmlWebpackPlugin.options._entry) !== -1) { %>
@@ -16,3 +20,5 @@
 <% } %>
 
 <!-- Analytics -->
+
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
