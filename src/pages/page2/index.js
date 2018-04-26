@@ -21,7 +21,7 @@ import '../../styles/common.styl'
 import '../../styles/nk-player'
 
 // images
-import poster from '../../images/page2/poster.png'
+import poster from '../../media/page2/poster.png'
 
 (function ($, win) {
     /**

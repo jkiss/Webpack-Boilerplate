@@ -24,7 +24,7 @@ module.exports = {
         path.resolve('./src/fonts'),
         path.resolve('./src/styles'),
         path.resolve('./src/modules'),
-        path.resolve('./src/images'),
+        path.resolve('./src/media'),
         path.resolve('./node_modules')
     ]
 };

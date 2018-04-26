@@ -73,6 +73,19 @@ module.exports = {
                         }
                     }
                 ]
+            },
+
+            {
+                test: /\.(mp3|mp4)\??.*$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options:{
+                            limit: 1,
+                            name: 'sounds/[hash].[ext]'
+                        }
+                    }
+                ]
             }
         ])
     },

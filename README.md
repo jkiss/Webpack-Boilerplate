@@ -12,7 +12,7 @@
 │   ├── page1.ejs
 │   ├── page2.ejs
 │   └── partials
-├── images
+├── media           // 包含图片、声音等资源文件
 │   ├── circle.png  // 外层图片由组件import使用
 │   ├── copy        // copy文件夹下面的图片会直接复制到 build/images 下面
 │

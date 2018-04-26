@@ -74,8 +74,8 @@ module.exports = {
         ,new copyWebpackPlugin([
             {
                 from: '**/*.*',
-                to: 'images',
-                context: 'src/images/copy/'
+                to: 'media',
+                context: 'src/media/copy/'
             }
         ])
     ]
