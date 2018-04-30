@@ -45,14 +45,14 @@ module.exports = {
         // Generate HTML file to 'output' folder, each of html need a plugin
         ,new htmlWebpackPlugin({
             inject: false,
-            filename: 'new-era-for-china.html',
+            filename: 'page-1.html',
             template: path.resolve(__dirname, '../src/html/page1.ejs'),
             _entry: 'page1.index',  // 用于多页判断
             page: config.page1
         })
         ,new htmlWebpackPlugin({
             inject: false,
-            filename: 'moments-on-world-stage.html',
+            filename: 'page-2.html',
             template: path.resolve(__dirname, '../src/html/page2.ejs'),
             _entry: 'page2.index',  // 用于多页判断
             page: config.page2

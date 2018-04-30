@@ -7,7 +7,7 @@
 
 module.exports = {
     // Deploy
-    public_path: '/article'
+    public_path: '/home'
 
     // multi-pages
     ,page1:{ // 你我新时代

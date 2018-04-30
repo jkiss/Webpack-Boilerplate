@@ -49,7 +49,19 @@ module.exports = {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: 'css-loader'
+                use: [
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')(),
+                                require('cssnano')()
+                            ]
+                        }
+                    },
+                ]
             })
         },
 
@@ -57,7 +69,20 @@ module.exports = {
             test: /\.styl$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: 'css-loader!stylus-loader'
+                use: [
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')(),
+                                require('cssnano')()
+                            ]
+                        }
+                    },
+                    'stylus-loader'
+                ]
             })
         },
 
