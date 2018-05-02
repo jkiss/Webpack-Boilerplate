@@ -17,10 +17,10 @@ import { TimelineLite } from 'gsap'
 import 'jwplayer'
 
 // Style
-import '../../fonts/roboto-light.styl'
-import '../../styles/common.styl'
-import '../../styles/nk-player'
-import './css'
+import 'roboto-light.styl'
+import 'common.styl'
+import 'nk-player.styl'
+import './css.styl'
 
 (function ($, win) {
     /**

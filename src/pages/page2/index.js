@@ -16,9 +16,9 @@ import { TimelineLite } from 'gsap'
 import 'jwplayer'
 
 // Style
-import '../../fonts/roboto-light.styl'
-import '../../styles/common.styl'
-import '../../styles/nk-player'
+import 'roboto-light.styl'
+import 'common.styl'
+import 'nk-player'
 
 // images
 import poster from '../../media/page2/poster.png'
