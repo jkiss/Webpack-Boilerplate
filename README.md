@@ -14,7 +14,7 @@
 │   └── partials
 ├── media           // 包含图片、声音等资源文件
 │   ├── circle.png  // 外层图片由组件import使用
-│   ├── copy        // copy文件夹下面的图片会直接复制到 build/images 下面
+│   ├── copy/       // copy文件夹下面的图片会直接复制到 build/images 下面
 │
 ├── modules         // 通用组件
 │   ├── components
@@ -30,6 +30,7 @@
 │   ├── nk-player.styl
 │   └── utils
 └── vendor
+    ├── copy/          // copy文件夹下面的库会直接拷贝到 build/vendor 下面
     ├── SplitText.min.js
     └── jwplayer7.12.11.js
 ```
