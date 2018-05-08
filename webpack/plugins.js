@@ -48,14 +48,16 @@ module.exports = {
             filename: 'page-1.html',
             template: path.resolve(__dirname, '../src/html/page1.ejs'),
             _entry: 'page1.index',  // 用于多页判断
-            page: config.page1
+            page: config.page1,
+            public_path: config.public_path
         })
         ,new htmlWebpackPlugin({
             inject: false,
             filename: 'page-2.html',
             template: path.resolve(__dirname, '../src/html/page2.ejs'),
             _entry: 'page2.index',  // 用于多页判断
-            page: config.page2
+            page: config.page2,
+            public_path: config.public_path
         })
 
         // Automatically loaded modules when identifier is used as free variable in a module

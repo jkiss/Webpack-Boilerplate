@@ -1,3 +1,6 @@
+<!-- vendor -->
+<script src="<%= htmlWebpackPlugin.options.public_path%>/vendor/createjs.min.js"></script>
+
 <!-- bundle js -->
 <script src="<%= htmlWebpackPlugin.files.chunks['manifest'].entry %>?v=<%= version%>"></script>
 <script src="<%= htmlWebpackPlugin.files.chunks['vendor'].entry %>?v=<%= version%>"></script>
