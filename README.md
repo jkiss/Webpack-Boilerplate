@@ -67,3 +67,21 @@
     }
 }
 ```
+
+### 三、集成的基础插件和功能插件：
+
+   1. [**jquery**](https://jquery.com/): $ 已暴露为全局变量，可以引用jQuery插件；
+   
+   2. [**Preload.js**](https://www.createjs.com/preloadjs)：预加载；
+   
+   3. [**fullpage.js**](https://alvarotrigo.com/fullPage/)：全屏滚动插件；
+   
+   4. [**lodash**](https://lodash.com/)：js基础功能函数封装（utility library）；
+   
+   5. [**lazysizes**](https://github.com/aFarkas/lazysizes)：具有丰富的图片懒加载方式；
+   
+   6. [**gsap**](https://greensock.com/gsap)：动画库；
+   
+   7. [**stylus**](http://stylus-lang.com/): TJ大神出品的css预编译语言，底层node；
+   
+   8. [**nib**](http://tj.github.io/nib/): 配合stylus的css3扩展函数；
