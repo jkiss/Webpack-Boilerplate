@@ -15,6 +15,7 @@ import 'babel-polyfill'
 // Plugins
 import { TimelineLite } from 'gsap'
 import 'jwplayer'
+import _log_hire from 'nk-hire'
 
 // Style
 import 'roboto-light.styl'
@@ -76,4 +77,6 @@ import './css.styl'
     } catch(error){
         console.error('JWplayer: ' + error)
     }
+
+    _log_hire()
 }(jQuery, window))
