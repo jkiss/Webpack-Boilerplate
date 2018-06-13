@@ -14,6 +14,7 @@ import 'babel-polyfill'
 
 // Plugins
 import { TimelineLite } from 'gsap'
+import * as PIXI from 'pixi.js'
 import 'jwplayer'
 import _log_hire from 'nk-hire'
 
@@ -21,7 +22,7 @@ import _log_hire from 'nk-hire'
 import 'roboto-light.styl'
 import 'common.styl'
 import 'nk-player.styl'
-import './css.styl'
+import './index-css'
 
 (function ($, win) {
     /**
@@ -67,8 +68,8 @@ import './css.styl'
             primary: 'html5',
             autostart: false,
             hlshtml: true,
-            base: 'https://op.cgtn.com/plugins/jwplayer-7.12.11',
-            flashplayer: 'https://op.cgtn.com/plugins/jwplayer-7.12.11'
+            base: '',
+            flashplayer: ''
         }).on('setupError', ()=>{
             console.log('Setup Error...')
         }).on('play', ()=>{

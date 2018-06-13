@@ -1,6 +1,6 @@
 {
   "name": "web-react-template",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -11,6 +11,7 @@
     "nib": "^1.1.2",
     "nk-hire": "^1.0.6",
     "npm": "^5.7.1",
+    "pixi.js": "^4.8.1",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
