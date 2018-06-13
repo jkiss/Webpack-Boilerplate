@@ -72,7 +72,7 @@
 
    1. [**jquery**](https://jquery.com/): $ 已暴露为全局变量，可以引用jQuery插件；
    
-   2. [**Preload.js**](https://www.createjs.com/preloadjs)：预加载；
+   2. [**Pixi.js**](http://www.pixijs.com/)：2D库；
    
    3. [**fullpage.js**](https://alvarotrigo.com/fullPage/)：全屏滚动插件；
    
