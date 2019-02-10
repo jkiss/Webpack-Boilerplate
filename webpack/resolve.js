@@ -14,17 +14,14 @@ module.exports = {
          * Plugins( PS: some plugins may be installed by npm, please check package.json!!! )
          */
         'split-text': path.resolve(vendor_path, 'SplitText.min.js')
-        ,'jwplayer': path.resolve(vendor_path, 'jwplayer7.12.11.js')
-        ,'jquery-loader': path.resolve(vendor_path, 'jquery.html5Loader.min.js')
+        ,'jwplayer': path.resolve(vendor_path, 'jwplayer8.7.3.js')
     },
 
-    extensions: ['.js', '.styl', '.css', '.jpg', '.gif', '.png'],
+    extensions: ['.js', '.styl', '.css', '.jpg', '.gif', '.png', 'mp3', 'mp4'],
 
     modules: [
-        path.resolve('./src/fonts'),
-        path.resolve('./src/styles'),
         path.resolve('./src/modules'),
-        path.resolve('./src/media'),
+        path.resolve('./src/app'),
         path.resolve('./node_modules')
     ]
 };

@@ -5,59 +5,22 @@
  */
 'use strict';
 
-const path = require('path')
 const config = require('../config')
+const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            // warnings: false,
-            // ie8: false,
-            compress: {
-                warnings: false
-            }
-        })
-
-        /**
-         * CommonChunksPlugin will now extract all the common modules from vendor and node_modules
-         */
-        ,new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'bundle/[name].js',
-            minChunks: function (module) {
-                var isNpmPlugin = module.context && module.context.indexOf('node_modules') !== -1;
-                var isVendorPlugin = module.context && module.context.indexOf('vendor') !== -1;
-                return isNpmPlugin || isVendorPlugin;
-            }
-        })
-
-        ,new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
-        })
 
         // Extract css file for every entry files
-        ,new ExtractTextPlugin('bundle/[name].css')
-
-        // Generate HTML file to 'output' folder, each of html need a plugin
-        ,new htmlWebpackPlugin({
-            inject: false,
-            filename: 'page-1.html',
-            template: path.resolve(__dirname, '../src/html/page1.ejs'),
-            _entry: 'page1.index',  // 用于多页判断
-            page: config.page1,
-            public_path: config.public_path
-        })
-        ,new htmlWebpackPlugin({
-            inject: false,
-            filename: 'page-2.html',
-            template: path.resolve(__dirname, '../src/html/page2.ejs'),
-            _entry: 'page2.index',  // 用于多页判断
-            page: config.page2,
-            public_path: config.public_path
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: 'bundle/[name].css'
+            // chunkFilename: 'bundle/[name].css'
         })
 
         // Automatically loaded modules when identifier is used as free variable in a module
@@ -72,12 +35,29 @@ module.exports = {
             'PropTypes': 'prop-types'
         })
 
+        ,new htmlWebpackPlugin({
+            inject: false,
+            filename: 'index.html',
+            template: path.resolve(__dirname, '../src/app/index.ejs'),
+            page: config.page,
+            public_path: config.public_path,
+            ga_id: config.ga_id,
+            fb_id: config.fb_id
+        })
+
         // Copy static files to 'config.output' folder
         ,new copyWebpackPlugin([
             {
+                from: 'favicon.png',
+                to: ''
+            },{
+                from: '**/*.*',
+                to: 'vendor',
+                context: 'src/vendor/copy/'
+            },{
                 from: '**/*.*',
                 to: 'media',
-                context: 'src/media/copy/'
+                context: 'src/modules/res/copy/'
             }
         ])
     ]

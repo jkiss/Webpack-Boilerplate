@@ -5,18 +5,11 @@
  */
 'use strict';
 
-const path = require('path');
+const path = require('path')
+const config = require('../config')
 
-const PAGE_PATH = [
-    // config you page path here
-    'page1/index'
-
-    ,'page2/index'
-
-], ENTRY = {};
-
-PAGE_PATH.forEach((page) => {
-    ENTRY[page.split("/").join(".")] = path.resolve(__dirname, '../src/pages/' + page + '.js');
-});
+let ENTRY = {
+        index: './src/app/index.js'
+    }
 
 module.exports = ENTRY;

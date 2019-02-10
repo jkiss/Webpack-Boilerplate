@@ -1,42 +1,49 @@
 /*
  * @Author: Nokey
  * @Date: 2017-02-24 14:16:31
- * @Last Modified by: Nokey
- * @Last Modified time: 2017-09-02 20:45:03
+ * @Last Modified by: Mr.B
+ * @Last Modified time: 2018-10-30 16:17:44
  */
 'use strict';
 
 const webpack = require('webpack')
 const path = require('path')
 const config = require('./config')
+const poststylus = require('poststylus')
 
 /**
  * Common config that can be used in dev & prod environment
  */
 const ENTRY = require('./webpack/entry')
-const LOADERS = require('./webpack/loaders').loaders
+const RULES = require('./webpack/rules').rules
 const PLUGINS = require('./webpack/plugins').plugins
 const RESOLVE = require('./webpack/resolve')
+const OPTIMIZITION = require('./webpack/optimization')
 
 /**
  * Config
  */
-const PORT = 8989
+const PORT = config.port
 const PUBLIC_PATH = config.public_path
 
 /**
  * Dev plugins
  */
-const openBrowserPlugin = require('open-browser-webpack-plugin');
+// const openBrowserPlugin = require('open-browser-webpack-plugin')
 
 module.exports = {
+    mode: 'development',
+
+    optimization: OPTIMIZITION,
+
     // dectool should be false if env is production!!!
     devtool: 'cheap-eval-source-map', // false || 'cheap-eval-source-map'
 
     // devServer
     devServer: {
         port: PORT,
-        contentBase: path.join(__dirname, './build')
+        contentBase: path.join(__dirname, './build'),
+        hot: true
     },
 
     entry: ENTRY,
@@ -48,15 +55,15 @@ module.exports = {
     },
 
     module: {
-        loaders: LOADERS.concat([
+        rules: RULES.concat([
             {
-                test: /\.(gif|png|jpg)\??.*$/,
+                test: /\.(gif|png|jpg|mp3|mp4|obj|mtl|glb)\??.*$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options:{
                             limit: 1024,
-                            name: 'images/[hash].[ext]'
+                            name: 'media/[hash].[ext]'
                         }
                     }
                 ]
@@ -76,13 +83,30 @@ module.exports = {
             },
 
             {
-                test: /\.(mp3|mp4)\??.*$/,
+                test: /\.css$/,
                 use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+    
+            {
+                test: /\.styl$/,
+                use: [
+                    'style-loader',
                     {
-                        loader: 'url-loader',
-                        options:{
-                            limit: 1,
-                            name: 'sounds/[hash].[ext]'
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[local]__[hash:base64:10]'
+                        }
+                    },
+                    {
+                        loader: 'stylus-loader',
+                        options: {
+                            use: [
+                                poststylus([ 'autoprefixer', 'rucksack-css' ])
+                            ]
                         }
                     }
                 ]
@@ -91,16 +115,7 @@ module.exports = {
     },
 
     plugins: PLUGINS.concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('development') // development - production
-            }
-        })
-
-        // It's not necessary to open broswer everytime after bundle
-        // ,new openBrowserPlugin({
-        //     url: 'http://localhost:' + PORT + PUBLIC_PATH
-        // })
+        new webpack.HotModuleReplacementPlugin()
     ]),
 
     resolve: RESOLVE

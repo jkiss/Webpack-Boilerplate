@@ -6,37 +6,36 @@
  */
 'use strict';
 
-/**
- * data obj contain info to share
- * 
- * @param {Object} data 
- */
-function setShareData(data){
+function setShareData(shareData){
 	//朋友圈
 	wx.onMenuShareTimeline({
-		title: data.title,
-		link: data.site_link,
-		imgUrl: data.img_url,
+		title: shareData.title,
+		link: shareData.site_link,
+		imgUrl: shareData.img_url,
 		success: function (){ 
-		 	console.log('Timeline share success!');
+			console.log("timeline");
+			shareData.success && shareData.success();
 		},
 		cancel: function (){
-			console.log('Timeline share fail!');
+			console.log("timeline");
+			shareData.cancel && shareData.cancel();
 		}
 	});
 	//好友
 	wx.onMenuShareAppMessage({
-		title: data.title,
-		desc: data.desc,
-		link: data.site_link, 
-		imgUrl: data.img_url,
+		title: shareData.title,
+		desc: shareData.desc,
+		link: shareData.site_link, 
+		imgUrl: shareData.img_url,
 		type: '', // 分享类型,music、video或link，不填默认为link
 		dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
 		success: function (){ 
-			console.log('Message share success!');
+			console.log("message");
+			shareData.success && shareData.success();
 		},
 		cancel: function (){
-			console.log('Message share fail!');
+			console.log("message");
+			shareData.cancel && shareData.cancel();
 		}
 	});
 }
@@ -50,13 +49,13 @@ function setWxShare(shareData){
 	// request signature
 	$.ajax({
 		type: 'GET',
-		url: 'https://url/to/api?url=' + encodeURIComponent(location.href.split('#')[0]),
+		url: 'https://wechat.cgtn.com/socialweb/social/weixin/getKeys.do?url=' + encodeURIComponent(location.href.split('#')[0]),
 		contentType: 'application/json',
 		dataType: 'json',
 		success: function(data){
 			wx.config({
 				debug: false,
-				appId: '', // 必填，公众号的唯一标识
+				appId: 'wxd61ff47456d31b8e', // 必填，公众号的唯一标识
 				timestamp: data.data.timestamp, // 必填，生成签名的时间戳
 				nonceStr: data.data.nonceStr, // 必填，生成签名的随机串
 				signature: data.data.signature,// 必填，签名，见附录1
