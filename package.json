@@ -1,16 +1,15 @@
 {
   "name": "webpack-template",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@babel/runtime": "^7.2.0",
     "animejs": "^3.0.1",
     "autoprefixer": "^9.3.1",
-    "classnames": "^2.2.6",
     "device.js": "^2.3.0",
     "jquery": "^3.3.1",
-    "lazysizes": "^4.0.1-beta1",
+    "lazysizes": "^4.1.5",
     "lodash": "^4.17.4",
     "nib": "^1.1.2",
     "raf": "^3.4.0",
@@ -53,9 +52,9 @@
     "deploy-test": "node ./bash/deploy.js"
   },
   "keywords": [
-    "react",
-    "web",
-    "template"
+    "webpack",
+    "template",
+    "h5"
   ],
   "author": "Mr.B",
   "license": "ISC",
