@@ -121,11 +121,11 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            localIdentName: '[hash:base64:12]'
-                        }
+                        loader: 'css-loader'
+                        // options: {
+                        //     modules: true,
+                        //     localIdentName: '[hash:base64:12]'
+                        // }
                     },
                     {
                         loader: 'stylus-loader',
