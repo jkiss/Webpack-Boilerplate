@@ -29,11 +29,25 @@ const OPTIMIZITION = require('./webpack/optimization')
  */
 const PUBLIC_PATH = config.public_path
 
-let NEW_PLUGINS
+let NEW_PLUGINS = PLUGINS
 if(config.analyse_bundle){
-    NEW_PLUGINS = PLUGINS.concat([ new BundleAnalyzerPlugin() ])
-}else{
-    NEW_PLUGINS = PLUGINS
+    NEW_PLUGINS = NEW_PLUGINS.concat([ new BundleAnalyzerPlugin() ])
+}
+if(config.image_min){
+    NEW_PLUGINS = NEW_PLUGINS.concat([
+        new ImageminPlugin({
+            // disable: process.env.NODE_ENV !== 'production', // Disable during development
+            pngquant: {
+                quality: '60-65'
+            },
+            plugins: [
+                imageminMozjpeg({
+                    quality: 60,
+                    progressive: true
+                })
+            ]
+        })
+    ])
 }
 
 module.exports = {
@@ -126,20 +140,7 @@ module.exports = {
         ])
     },
 
-    plugins: NEW_PLUGINS.concat([
-        new ImageminPlugin({
-            // disable: process.env.NODE_ENV !== 'production', // Disable during development
-            pngquant: {
-                quality: '60-65'
-            },
-            plugins: [
-                imageminMozjpeg({
-                    quality: 60,
-                    progressive: true
-                })
-            ]
-        })
-    ]),
+    plugins: NEW_PLUGINS,
 
     resolve: RESOLVE
 };

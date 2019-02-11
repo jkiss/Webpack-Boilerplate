@@ -13,6 +13,7 @@ module.exports = {
     ,ga_id: 'UA-????'
     ,fb_id: '123456789'
     ,analyse_bundle: false
+    ,image_min: true
 
     ,page:{
         title: 'NULL'
