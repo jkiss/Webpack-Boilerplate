@@ -42,8 +42,8 @@ module.exports = {
     // devServer
     devServer: {
         port: PORT,
-        contentBase: path.join(__dirname, './build'),
-        hot: true
+        contentBase: path.join(__dirname, './build')
+        // hot: true
     },
 
     entry: ENTRY,
