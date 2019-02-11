@@ -72,15 +72,11 @@
 
    1. [**jquery**](https://jquery.com/): $ 已暴露为全局变量，可以引用jQuery插件；
    
-   2. [**Pixi.js**](http://www.pixijs.com/)：2D库；
-   
-   3. [**fullpage.js**](https://alvarotrigo.com/fullPage/)：全屏滚动插件；
-   
    4. [**lodash**](https://lodash.com/)：js基础功能函数封装（utility library）；
    
-   5. [**lazysizes**](https://github.com/aFarkas/lazysizes)：具有丰富的图片懒加载方式；
+   5. [**resource-loader**](http://englercj.github.io/resource-loader/)：具有丰富的图片懒加载方式；
    
-   6. [**gsap**](https://greensock.com/gsap)：动画库；
+   6. [**animejs**](https://animejs.com/documentation)：动画库；
    
    7. [**stylus**](http://stylus-lang.com/): TJ大神出品的css预编译语言，底层node；
    
