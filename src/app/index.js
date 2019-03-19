@@ -30,23 +30,26 @@ import './css'
 /*
 * wxShare
 */
-// setWxShare({
-//     title: config.pages[0].title,
-//     desc: config.pages[0].desc,
-//     site_link: config.pages[0].url,
-//     img_url: config.pages[0].thumb,
-//     success: ()=>{
-//         console.log('Share success!')
-//     },
-//     cancel: ()=>{
-//         console.log('Share cancel!')
-//     }
-// })
+// if(Util.isWeiXin()){
+//     setWxShare({
+//         title: config.page.title,
+//         desc: config.page.desc,
+//         site_link: config.page.url,
+//         img_url: config.page.thumb,
+//         success: ()=>{
+//             console.log('Share success!')
+//         },
+//         cancel: ()=>{
+//             console.log('Share cancel!')
+//         }
+//     })
+//     console.log('isWX')
+// }
 
 /**
  * GA
  */
 // gtag('config', config.ga_id, {
-//     'page_title': config.pages[0].title,
+//     'page_title': config.page.title,
 //     'page_path': config.public_path
 // })

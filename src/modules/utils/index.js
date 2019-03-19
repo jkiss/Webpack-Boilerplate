@@ -22,6 +22,15 @@ class Util {
         return false
     }
 
+    isWeiXin(){
+        let ua = window.navigator.userAgent.toLowerCase()
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true
+        }else{
+            return false
+        }
+    }
+
     /**
      * HTML:
      * <div class="center-image">
