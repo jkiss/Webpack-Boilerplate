@@ -142,5 +142,18 @@ module.exports = {
 
     plugins: NEW_PLUGINS,
 
-    resolve: RESOLVE
+    resolve: RESOLVE,
+
+    stats: {
+        // copied from `'minimal'`
+        all: false,
+        modules: true,
+        maxModules: 0,
+        errors: true,
+        warnings: true,
+        // our additional options
+        moduleTrace: true,
+        errorDetails: true,
+        builtAt: true
+    }
 };
