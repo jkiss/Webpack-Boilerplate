@@ -46,7 +46,7 @@ module.exports = {
         },
 
         {
-            test: /\.(csv)\??.*$/,
+            test: /\.csv$/,
             use: [
                 {
                     loader: 'csv-loader',
