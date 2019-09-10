@@ -7,7 +7,7 @@
 
 module.exports = {
     // Deploy
-    public_path: '/home'
+    public_path: '/event/test'
     ,port: 8686
     ,plugin_url: 'https://some.com'
     ,ga_id: 'UA-????'

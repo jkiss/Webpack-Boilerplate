@@ -140,7 +140,11 @@ module.exports = {
         ])
     },
 
-    plugins: NEW_PLUGINS,
+    plugins: NEW_PLUGINS.concat([
+        new webpack.DefinePlugin({
+            PRODUCTION: JSON.stringify(true)
+        })
+    ]),
 
     resolve: RESOLVE,
 

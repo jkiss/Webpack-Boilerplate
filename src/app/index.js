@@ -16,6 +16,7 @@ import "@babel/polyfill"
 import Util from 'utils'
 import { setWxShare } from 'utils/wxShare'
 import { device } from 'device.js'
+import log from 'utils/log'
 
 // Style
 import './css'
@@ -24,7 +25,7 @@ import './css'
 /**
  * Writing logic code from Here
  */
-
+log.info('Hello world!')
 
 
 /*
