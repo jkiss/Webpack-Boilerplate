@@ -10,4 +10,16 @@ import * as log from 'loglevel'
 
 PRODUCTION ? log.setLevel('warn') : log.setLevel('debug')
 
-export default log
+export default {
+    info: function(){
+        log.info('%c [INFO]:', 'background: #222; color: #88d1f1', ...arguments)
+    },
+
+    warn: function() {
+        log.info('%c [WARN]:', 'background: #222; color: #f7de1f', ...arguments)
+    },
+
+    error: function(){
+        log.error('%c [ERROR]:', 'background: #222; color: #f44a47', ...arguments)
+    }
+}

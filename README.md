@@ -66,7 +66,7 @@
    
    5. [**resource-loader**](http://englercj.github.io/resource-loader/)：具有丰富的图片懒加载方式；
    
-   6. [**animejs**](https://animejs.com/documentation)：动画库；
+   6. [**gsap**](https://greensock.com/docs/v3)：动画库；
    
    7. [**stylus**](http://stylus-lang.com/): TJ大神出品的css预编译语言，底层node；
    

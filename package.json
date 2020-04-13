@@ -1,13 +1,13 @@
 {
   "name": "webpack-template",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@babel/runtime": "^7.2.0",
-    "animejs": "^3.0.1",
     "autoprefixer": "^9.3.1",
     "device.js": "^2.3.0",
+    "gsap": "^3.2.6",
     "jquery": "^3.3.1",
     "lazysizes": "^4.1.5",
     "lodash": "^4.17.4",
