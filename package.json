@@ -9,7 +9,7 @@
     "device.js": "^2.3.0",
     "gsap": "^3.2.6",
     "jquery": "^3.3.1",
-    "lazysizes": "^4.1.5",
+    "lazysizes": "^5.2.2",
     "lodash": "^4.17.4",
     "loglevel": "^1.6.4",
     "nib": "^1.1.2",
